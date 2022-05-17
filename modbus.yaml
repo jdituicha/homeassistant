@@ -1,0 +1,132 @@
+#modbus para powermeter
+modbus:
+  - name: "powermeter"
+    type: tcp
+    host: 192.168.100.100
+    port: 502
+    delay: 5
+    close_comm_on_error: true
+    timeout: 5
+    #scan_interval: 30
+    sensors:
+      - name: powermeter_voltage
+        unique_id: Voltaje_s1
+        unit_of_measurement: V
+        address: 8
+        data_type: int16
+        device_class: voltage
+        scale: 0.1
+#        precision: 1
+      - name: powermeter_current_1
+        unique_id: Corriente_s1      
+        unit_of_measurement: A
+        address: 9
+        data_type: int16        
+        device_class: current
+        scale: 0.1
+        precision: 1   
+      - name: powermeter_power_1
+        unique_id: Potencia_s1
+        unit_of_measurement: W
+        address: 10
+        data_type: int32
+        device_class: power
+      - name: powermeter_reactive_power_1
+        unique_id: Potecia_reactiva_s1      
+        unit_of_measurement: VAr
+        address: 12
+        data_type: int32
+        device_class: power  
+      - name: powermeter_net_active_energy_1
+        unique_id: Energía_activa_s1
+        unit_of_measurement: kWh
+        address: 14
+        data_type: int32
+        device_class: energy
+        scale: 0.01
+        precision: 2  
+      - name: powermeter_net_reactive_energy_1
+        unique_id: Energía_reactiva_s1
+        unit_of_measurement: kVArh
+        address: 16
+        data_type: int32
+        device_class: energy
+        scale: 0.01
+        precision: 2
+      - name: powermeter_net_energy_in_1
+        unique_id: Energía_igresada_s1
+        unit_of_measurement: kWh
+        address: 18
+        data_type: uint32
+        device_class: energy
+        scale: 0.01
+        precision: 2
+      - name: powermeter_net_energy_out_1
+        unique_id: Energía_entregada_s1
+        unit_of_measurement: kVArh
+        address: 20
+        data_type: uint32
+        device_class: energy
+        scale: 0.01
+        precision: 2
+##segundo sensor
+#      - name: powermeter_voltage_2
+#        unique_id: Voltaje_s2
+#        unit_of_measurement: V
+#        address: 22
+#        data_type: int16
+#        device_class: voltage
+#        scale: 0.1
+##        precision: 1
+#      - name: powermeter_current_2
+#        unique_id: Corriente_s2      
+#        unit_of_measurement: A
+#        address: 23
+#        data_type: int16        
+#        device_class: current
+#        scale: 0.1
+#        precision: 1          
+#      - name: powermeter_power_2
+#        unique_id: Potencia_s2
+#        unit_of_measurement: W
+#        address: 24
+#        data_type: int32
+#        device_class: power       
+#      - name: powermeter_reactive_power_2
+#        unique_id: Potecia_reactiva_s2      
+#        unit_of_measurement: VAr
+#        address: 26
+#        data_type: int32
+#        device_class: power         
+#      - name: powermeter_net_active_energy_2
+#        unique_id: Energía_activa_s2
+#        unit_of_measurement: kWh
+#        address: 28
+#        data_type: int32
+#        device_class: energy
+#        scale: 0.01
+#        precision: 2          
+#      - name: powermeter_net_reactive_energy_2
+#        unique_id: Energía_reactiva_s2
+#        unit_of_measurement: kVArh
+#        address: 30
+#        data_type: int32
+#        device_class: energy
+#        scale: 0.01
+#        precision: 2       
+#      - name: powermeter_net_energy_in_2
+#        unique_id: Energía_igresada_s2
+#        unit_of_measurement: kWh
+#        address: 32
+#        data_type: uint32
+#        device_class: energy
+#        scale: 0.01
+#        precision: 2     
+#      - name: powermeter_net_energy_out_2
+#        unique_id: Energía_entregada_s2
+#        unit_of_measurement: kVArh
+#        address: 34
+#        data_type: uint32
+#        device_class: energy
+#        scale: 0.01
+#        precision: 2
