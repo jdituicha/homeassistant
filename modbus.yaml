@@ -2,7 +2,7 @@
 modbus:
   - name: "powermeter"
     type: tcp
-    host: 192.168.88.130
+    host: 192.168.100.100
     port: 502
     delay: 5
     close_comm_on_error: true
